@@ -1,5 +1,7 @@
 # SpyGame
 
+This is a bot for tg, that can help you to play a SpyGame.
+
 This is a game in which one of you is a spy. Goes on a mission, but doesn't know where he's going. 
 You don't know who the spy is, so you are suspicious of all the players, trying to check each one you ask each other in turn about the location you are in, 
 listen carefully to the answers to figure out the agent who can only guess which location he is talking about. 
