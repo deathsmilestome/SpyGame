@@ -1,8 +1,6 @@
 from aiogram import Bot, types
 from aiogram.dispatcher import Dispatcher
 from aiogram.utils import executor
-from aiogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 import random
 import os
 
@@ -12,9 +10,6 @@ dp = Dispatcher(bot)
 members = list()
 locs = ('Бонч', 'Аквапарк', 'Цирк', 'Подводная лодка', 'Космическая станция')
 
-#goCheck = InlineKeyboardButton(text='GO!', callback_data='go')
-#go = InlineKeyboardButton(resize_keyboard=True)
-#go.row(goCheck)
 async def on_startup(_):
 	print('Started')
 
@@ -47,8 +42,5 @@ async def about_us(message :types.Message):
 		if new not in members:
 			members.append(new)
 			await message.reply("nice")
-
-
-
 
 executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
