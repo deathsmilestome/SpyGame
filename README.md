@@ -10,4 +10,6 @@ The spy tries to guess from your questions which location he is in. The game end
 To play, you need to add the bot to the chat, write the command \start and read the message from the bot.
 To participate in the game you need to answer "+" to the bot's message, when all are registered, 
 write the command \play, if you want to see a list of all locations - type the command \loc
+/newloc - to add new location(you can write +[location_name])
+/delloc - to remove location(you can write -[location_name])
 

@@ -25,6 +25,10 @@ async def command_start(message : types.Message):
 async def command_start(message : types.Message):
 	await message.answer("Для добавления новой локации отправьте сообщение типа +[название локации]" )
 
+@dp.message_handler(commands=['delloc'])
+async def command_start(message : types.Message):
+	await message.answer("Для удаления локации отправьте сообщение типа -[название локации]")
+
 @dp.message_handler(text_contains='+[')
 async def about_us(message :types.Message):
 	f = filter(str.isalpha, message.text)
@@ -32,6 +36,14 @@ async def about_us(message :types.Message):
 	locs.append(temp)
 	if temp in locs:
 		await message.answer("Добавлено!")
+
+@dp.message_handler(text_contains='-[')
+async def about_us(message :types.Message):
+	f = filter(str.isalpha, message.text)
+	temp = "".join(f)
+	locs.remove(temp)
+	if temp not in locs:
+		await message.answer("Удалено!")		
 
 @dp.message_handler(commands=['play'])
 async def command_start(message : types.Message):
