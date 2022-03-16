@@ -15,7 +15,8 @@ async def on_startup(_):
 
 @dp.message_handler(commands=['start'])
 async def command_start(message : types.Message):
-	await message.answer("Есть список локаций, все из вас, кроме одного, получают одну из этих локаций, игроки, которые получили локацию должны задавать друг другу вопросы про эту локацию и вычислять того, кто локацию не получил. Человек, который не получил локацию - шпион, ты должен интуитивно отвечать на вопросы, пытайся не спалиться, твоя задача угадать, что это за локация прежде чем тебя вычислят. GLHF")
+	locs = ['Бонч', 'Аквапарк', 'Цирк', 'Подводная лодка', 'Космическая станция']
+	await message.answer("Есть список локаций, все из вас, кроме одного, получают одну из этих локаций, игроки, которые получили локацию должны задавать друг другу вопросы про эту локацию и вычислять того, кто локацию не получил. Человек, который не получил локацию - шпион, ты должен интуитивно отвечать на вопросы, пытайся не спалиться, твоя задача угадать, что это за локация прежде чем тебя вычислят.\nДля участие в игре ответьте боту на это сообщение символом +\nGLHF\n \\newloc - создать новую локацию\n \\delloc - удалить локацию\n \\loc - список локаций \\play - начать игру")
 	await message.answer(locs)
 @dp.message_handler(commands=['loc'])
 async def command_start(message : types.Message):
@@ -23,11 +24,11 @@ async def command_start(message : types.Message):
 
 @dp.message_handler(commands=['newloc'])
 async def command_start(message : types.Message):
-	await message.answer("Для добавления новой локации отправьте сообщение типа +[название локации]" )
+	await message.answer("Для добавления новой локации отправьте сообщение типа\n +[название локации]" )
 
 @dp.message_handler(commands=['delloc'])
 async def command_start(message : types.Message):
-	await message.answer("Для удаления локации отправьте сообщение типа -[название локации]")
+	await message.answer("Для удаления локации отправьте сообщение типа\n -[название локации]")
 
 @dp.message_handler(text_contains='+[')
 async def about_us(message :types.Message):
