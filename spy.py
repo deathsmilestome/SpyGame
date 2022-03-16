@@ -55,8 +55,4 @@ async def about_us(message :types.Message):
 			members.append(new)
 			await message.reply("nice")
 
-<<<<<<< HEAD
 executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
-=======
-executor.start_polling(dp, skip_updates=True, on_startup=on_startup)
->>>>>>> 09d0172cff03fe3c1edccc32e93a9e9939a3fd2e
